@@ -176,6 +176,7 @@ button {
 .hero {
   position: relative;
   min-height: 100svh;
+  padding-top: 84px;
   display: grid;
   align-items: end;
   overflow: hidden;
@@ -818,6 +819,10 @@ h2 {
   .site-header {
     height: 70px;
     padding-inline: 18px;
+  }
+
+  .hero {
+    padding-top: 70px;
   }
 
   .menu-toggle {
