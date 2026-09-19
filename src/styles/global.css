@@ -1017,3 +1017,26 @@ h2 {
     transform: none;
   }
 }
+
+.icon-svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.release-play .icon-svg {
+  width: 18px;
+  height: 18px;
+  transform: translateX(1px);
+}
+
+.release-meta > a .icon-svg {
+  width: 14px;
+  height: 14px;
+}
