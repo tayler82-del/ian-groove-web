@@ -476,11 +476,6 @@ h2 {
   gap: clamp(28px, 4vw, 54px) 24px;
 }
 
-.release-card:nth-child(2),
-.release-card:nth-child(5) {
-  transform: translateY(36px);
-}
-
 .release-art {
   position: relative;
   overflow: hidden;
@@ -813,11 +808,6 @@ h2 {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.release-card:nth-child(2).is-visible,
-.release-card:nth-child(5).is-visible {
-  transform: translateY(36px);
 }
 
 @media (max-width: 900px) {
