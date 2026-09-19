@@ -1,0 +1,17 @@
+node_modules/
+.pnpm-store/
+dist/
+.astro/
+.DS_Store
+.node-version
+
+# Materiales internos del proyecto musical
+sources/
+output/
+AGENTS.md
+design-qa.md
+
+# Configuración local
+.env
+.env.*
+!.env.example

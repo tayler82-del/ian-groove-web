@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "otros-planes",
+    "title": "Otros planes",
+    "type": "Single",
+    "releaseDate": "2026-09-14",
+    "cover": "cover-otros-planes.png",
+    "description": "Una canción sobre cambiar el guion cuando la vida decide improvisar.",
+    "featured": true,
+    "live": false,
+    "links": {
+      "spotify": "https://open.spotify.com/album/4n7w0vHbAstt2BXEtjPIB7",
+      "appleMusic": "https://music.apple.com/us/album/otros-planes-single/6812408124?uo=4&app=music&at=1001lry3&ct=dashboard",
+      "itunes": "https://music.apple.com/us/album/otros-planes-single/6812408124?uo=4&app=itunes&at=1001lry3&ct=dashboard",
+      "hyperfollow": "https://distrokid.com/hyperfollow/iangroove/otros-planes?ref=release"
+    }
+  },
+  {
+    "slug": "la-mas-bonita",
+    "title": "La más bonita",
+    "type": "Single",
+    "releaseDate": "2026-09-12",
+    "cover": "cover-la-mas-bonita.png",
+    "description": "Pop latino luminoso, cercano y melódico.",
+    "featured": false,
+    "live": false,
+    "links": {
+      "appleMusic": "https://music.apple.com/es/album/la-m%C3%A1s-bonita-single/6811653213?uo=4",
+      "itunes": "https://music.apple.com/es/album/la-m%C3%A1s-bonita-single/6811653213?uo=4&app=itunes"
+    }
+  },
+  {
+    "slug": "tu-direccion-live",
+    "title": "Tu dirección - Live",
+    "type": "Single · Live",
+    "releaseDate": "2026-09-12",
+    "cover": "cover-tu-direccion-live.jpg",
+    "description": "Una interpretación íntima donde la voz y la historia ocupan el centro.",
+    "featured": false,
+    "live": true,
+    "links": {
+      "appleMusic": "https://music.apple.com/es/album/tu-direcci%C3%B3n-live-single/6811596197?uo=4",
+      "itunes": "https://music.apple.com/es/album/tu-direcci%C3%B3n-live-single/6811596197?uo=4&app=itunes"
+    }
+  },
+  {
+    "slug": "alla-voy",
+    "title": "Allá voy",
+    "type": "Single",
+    "releaseDate": "2026-09-12",
+    "cover": "cover-alla-voy.png",
+    "description": "Movimiento, decisión y horizonte mediterráneo.",
+    "featured": false,
+    "live": false,
+    "links": {
+      "spotify": "https://open.spotify.com/album/5K3h1mJnT7iimEjarMhJNd",
+      "appleMusic": "https://music.apple.com/us/album/all%C3%A1-voy-single/6811595297?uo=4&app=music&at=1001lry3&ct=dashboard",
+      "itunes": "https://music.apple.com/us/album/all%C3%A1-voy-single/6811595297?uo=4&app=itunes&at=1001lry3&ct=dashboard",
+      "hyperfollow": "https://distrokid.com/hyperfollow/iangroove/all-voy?ref=release"
+    }
+  },
+  {
+    "slug": "la-noche-te-queda-bien",
+    "title": "La noche te queda bien",
+    "type": "Single",
+    "releaseDate": "2026-09-12",
+    "cover": "cover-la-noche-te-queda-bien.png",
+    "description": "Dos amigos cruzan una línea que llevaba demasiado tiempo dibujada.",
+    "featured": false,
+    "live": false,
+    "links": {
+      "appleMusic": "https://music.apple.com/es/album/la-noche-te-queda-bien-single/6811586972?uo=4",
+      "itunes": "https://music.apple.com/es/album/la-noche-te-queda-bien-single/6811586972?uo=4&app=itunes"
+    }
+  },
+  {
+    "slug": "no-me-mires-asi",
+    "title": "No me mires así",
+    "type": "Single",
+    "releaseDate": "2026-09-08",
+    "cover": "cover-no-me-mires-asi.jpg",
+    "description": "Tensión, ritmo y una conversación que sucede sin palabras.",
+    "featured": false,
+    "live": false,
+    "links": {
+      "appleMusic": "https://music.apple.com/es/album/no-me-mires-as%C3%AD-single/6809953890?uo=4",
+      "itunes": "https://music.apple.com/es/album/no-me-mires-as%C3%AD-single/6809953890?uo=4&app=itunes"
+    }
+  },
+  {
+    "slug": "septiembre-puede-esperar",
+    "title": "Septiembre puede esperar",
+    "type": "Single",
+    "releaseDate": "2026-09-05",
+    "cover": "cover-septiembre-puede-esperar.jpg",
+    "description": "Una canción para alargar lo que todavía merece quedarse.",
+    "featured": false,
+    "live": false,
+    "links": {
+      "appleMusic": "https://music.apple.com/es/album/septiembre-puede-esperar-single/6809013857?uo=4",
+      "itunes": "https://music.apple.com/es/album/septiembre-puede-esperar-single/6809013857?uo=4&app=itunes"
+    }
+  }
+]

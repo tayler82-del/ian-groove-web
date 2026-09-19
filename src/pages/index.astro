@@ -1,0 +1,317 @@
+---
+import songs from "../data/songs.json";
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import heroImage from "../assets/images/ian-web-03.png";
+import artistImage from "../assets/images/ian-web-02.png";
+import liveImage from "../assets/images/ian-web-01.png";
+
+const coverAssets = import.meta.glob<{ default: ImageMetadata }>("../assets/covers/*", { eager: true });
+const coverFor = (song: (typeof songs)[number]) => coverAssets[`../assets/covers/${song.cover}`].default;
+
+const latestRelease = songs.find((song) => song.featured) ?? songs[0];
+const liveRelease = songs.find((song) => song.live);
+
+const platformLabels = {
+  spotify: "Spotify",
+  appleMusic: "Apple Music",
+  itunes: "iTunes",
+  hyperfollow: "Más plataformas",
+};
+
+const latestLinks = Object.entries(latestRelease.links).filter(([, url]) => Boolean(url));
+
+const deliveredStores = [
+  "Amazon",
+  "Anghami",
+  "Apple Music",
+  "MediaNet",
+  "Boomplay",
+  "Deezer",
+  "Instagram / Facebook",
+  "Adaptr",
+  "FLO",
+  "YouTube Music",
+  "iHeartRadio",
+  "Claro Música",
+  "iTunes",
+  "JOOX",
+  "Kuack Media",
+  "MassiveMusic",
+  "NetEase",
+  "Pandora",
+  "Qobuz",
+  "Saavn",
+  "Spotify",
+  "Tencent",
+  "TIDAL",
+  "TikTok y otras tiendas ByteDance",
+];
+
+const releaseDate = latestRelease.releaseDate
+  ? new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "long", year: "numeric" }).format(
+      new Date(`${latestRelease.releaseDate}T12:00:00`),
+    )
+  : null;
+
+const primaryLinkFor = (song: (typeof songs)[number]) =>
+  song.links.spotify ?? song.links.appleMusic ?? song.links.hyperfollow ?? null;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Web oficial de IAn Groove. Pop latino contemporáneo, nuevos lanzamientos y sesiones en directo." />
+    <meta name="theme-color" content="#101517" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
+    <title>IAn Groove — Web oficial</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="#inicio" aria-label="IAn Groove, inicio">IAn <span>Groove</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+        <span></span><span></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <nav id="main-nav" class="main-nav" aria-label="Navegación principal" data-nav>
+        <a href="#musica">Música</a>
+        <a href="#artista">IAn Groove</a>
+        <a href="#live">Live</a>
+        <a href="#plataformas">Plataformas</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <Image
+          src={heroImage}
+          alt="IAn Groove en un paisaje mediterráneo al atardecer"
+          widths={[640, 960, 1280, 1600]}
+          sizes="100vw"
+          format="webp"
+          quality={82}
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero-shade"></div>
+        <div class="hero-content shell">
+          <p class="eyebrow">Pop latino contemporáneo</p>
+          <h1 id="hero-title">Canciones que se quedan<br />{" "}cuando todo lo demás cambia.</h1>
+          <p class="hero-intro">Una voz cálida. Historias cercanas. Un sonido que viaja sin perder su identidad.</p>
+          <div class="hero-actions">
+            {latestRelease.links.spotify && (
+              <a class="button button-primary" href={latestRelease.links.spotify} target="_blank" rel="noreferrer">
+                Escuchar ahora <span aria-hidden="true">↗</span>
+              </a>
+            )}
+            <a class="text-link" href="#musica">Explorar la música <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest section-dark" aria-labelledby="latest-title">
+        <div class="shell latest-grid">
+          <div class="cover-frame reveal">
+            <Image
+              src={coverFor(latestRelease)}
+              alt={`Portada de ${latestRelease.title}`}
+              widths={[480, 720, 960]}
+              sizes="(max-width: 900px) min(100vw - 36px, 560px), 40vw"
+              format="webp"
+              quality={82}
+              loading="lazy"
+            />
+          </div>
+          <div class="latest-copy reveal">
+            <p class="eyebrow accent">Último lanzamiento</p>
+            <h2 id="latest-title">{latestRelease.title}</h2>
+            <p class="latest-description">{latestRelease.description}</p>
+            {releaseDate && <p class="release-date">Publicado el {releaseDate}</p>}
+            <div class="platform-buttons" aria-label={`Escuchar ${latestRelease.title}`}>
+              {latestLinks.map(([platform, url]) => (
+                <a href={url} target="_blank" rel="noreferrer">
+                  {platformLabels[platform as keyof typeof platformLabels]}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="music-section" id="musica" aria-labelledby="music-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">Discografía</p>
+              <h2 id="music-title">Música</h2>
+            </div>
+            <p>Siete canciones, distintas escenas y una misma voz.</p>
+          </div>
+
+          <div class="music-grid">
+            {songs.map((song) => {
+              const primaryLink = primaryLinkFor(song);
+              return (
+                <article class="release-card reveal">
+                  <div class="release-art">
+                    <Image
+                      src={coverFor(song)}
+                      alt={`Portada de ${song.title}`}
+                      widths={[360, 540, 720]}
+                      sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 900px) 50vw, 33vw"
+                      format="webp"
+                      quality={82}
+                      loading="lazy"
+                    />
+                    {primaryLink && (
+                      <a class="release-play" href={primaryLink} target="_blank" rel="noreferrer" aria-label={`Escuchar ${song.title}`}>
+                        <span aria-hidden="true">▶</span>
+                      </a>
+                    )}
+                  </div>
+                  <div class="release-meta">
+                    <div>
+                      <h3>{song.title}</h3>
+                      <p>{song.type}</p>
+                    </div>
+                    {primaryLink ? (
+                      <a href={primaryLink} target="_blank" rel="noreferrer" aria-label={`Abrir ${song.title}`}><span aria-hidden="true">↗</span></a>
+                    ) : (
+                      <span class="delivered-label">Publicado</span>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section class="artist-section" id="artista" aria-labelledby="artist-title">
+        <div class="artist-image reveal">
+          <Image
+            src={artistImage}
+            alt="Retrato mediterráneo de IAn Groove"
+            widths={[600, 900, 1200]}
+            sizes="(max-width: 900px) 100vw, 50vw"
+            format="webp"
+            quality={82}
+            loading="lazy"
+          />
+        </div>
+        <div class="artist-copy reveal">
+          <p class="eyebrow">El artista</p>
+          <h2 id="artist-title">IAn Groove</h2>
+          <p class="lead">La voz une. La emoción permanece. El sonido evoluciona.</p>
+          <p>IAn Groove es un proyecto de pop latino contemporáneo construido alrededor de una voz masculina cálida, cercana y ligeramente rasgada.</p>
+          <p>Cada canción parte de una historia concreta y busca ese equilibrio entre melodía, ritmo y verdad emocional que invita a volver a escucharla.</p>
+          <a class="text-link dark-link" href="#live">Descubrir la faceta live <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="live-section" id="live" aria-labelledby="live-title">
+        <Image
+          class="live-backdrop"
+          src={liveImage}
+          alt="IAn Groove interpretando una canción en directo"
+          widths={[640, 960, 1280, 1600]}
+          sizes="100vw"
+          format="webp"
+          quality={82}
+          loading="lazy"
+        />
+        <div class="live-overlay"></div>
+        <div class="shell live-content reveal">
+          <p class="eyebrow accent">Sesiones en directo</p>
+          <h2 id="live-title">Live</h2>
+          <p>La versión más cercana de las canciones: menos capas, más respiración y toda la historia frente al público.</p>
+          {liveRelease && (
+            <div class="live-release">
+              <Image
+                src={coverFor(liveRelease)}
+                alt={`Portada de ${liveRelease.title}`}
+                width={144}
+                height={144}
+                format="webp"
+                quality={82}
+                loading="lazy"
+              />
+              <div><span>Disponible ahora</span><strong>{liveRelease.title}</strong></div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section class="platforms-section" id="plataformas" aria-labelledby="platforms-title">
+        <div class="shell platforms-grid">
+          <div class="platforms-copy reveal">
+            <p class="eyebrow">Disponible en</p>
+            <h2 id="platforms-title">Escucha a IAn Groove</h2>
+            <p>Elige tu plataforma y descubre «Otros planes», el último lanzamiento de IAn Groove.</p>
+            <div class="verified-links">
+              {latestLinks.map(([platform, url]) => (
+                <a href={url} target="_blank" rel="noreferrer">
+                  {platformLabels[platform as keyof typeof platformLabels]}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
+          </div>
+          <div class="store-list reveal" aria-label="Plataformas donde está disponible la música de IAn Groove">
+            {deliveredStores.map((store) => <span>{store}</span>)}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="wordmark footer-mark" href="#inicio">IAn <span>Groove</span></a>
+        <p>Pop latino contemporáneo · Historias con voz propia.</p>
+        <div class="footer-links">
+          <a href="#musica">Música</a>
+          <a href="#artista">Artista</a>
+          <a href="#plataformas">Plataformas</a>
+        </div>
+        <p class="ai-disclosure">Proyecto musical y visual creado con herramientas de inteligencia artificial.</p>
+        <p class="copyright">© {new Date().getFullYear()} IAn Groove</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const nav = document.querySelector("[data-nav]");
+      const header = document.querySelector("[data-header]");
+
+      toggle?.addEventListener("click", () => {
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+        nav?.classList.toggle("is-open", !isOpen);
+      });
+
+      nav?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          toggle?.setAttribute("aria-expanded", "false");
+          nav.classList.remove("is-open");
+        });
+      });
+
+      const updateHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > 24);
+      updateHeader();
+      window.addEventListener("scroll", updateHeader, { passive: true });
+
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")),
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>
