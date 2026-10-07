@@ -159,7 +159,7 @@ const primaryLinkFor = (song: (typeof songs)[number]) =>
               <p class="eyebrow">Discografía</p>
               <h2 id="music-title">Música</h2>
             </div>
-            <p>Siete canciones, distintas escenas y una misma voz.</p>
+            <p>{songs.length} canciones, distintas escenas y una misma voz.</p>
           </div>
 
           <div class="music-grid">
@@ -268,7 +268,7 @@ const primaryLinkFor = (song: (typeof songs)[number]) =>
           <div class="platforms-copy reveal">
             <p class="eyebrow">Disponible en</p>
             <h2 id="platforms-title">Escucha a IAn Groove</h2>
-            <p>Elige tu plataforma y descubre «Otros planes», el último lanzamiento de IAn Groove.</p>
+            <p>Elige tu plataforma y descubre «{latestRelease.title}», el último lanzamiento de IAn Groove.</p>
             <div class="verified-links">
               {latestLinks.map(([platform, url]) => (
                 <a href={url} target="_blank" rel="noreferrer">

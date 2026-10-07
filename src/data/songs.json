@@ -1,12 +1,60 @@
 [
   {
+    "slug": "de-donde-soy",
+    "title": "De dónde soy",
+    "type": "Single",
+    "releaseDate": "2026-10-04",
+    "cover": "cover-de-donde-soy.png",
+    "description": "Cumbia pop sobre las raíces, el barrio y la gente que llevamos con nosotros.",
+    "featured": true,
+    "live": false,
+    "links": {
+      "spotify": "https://open.spotify.com/album/4ogHaUXCUL9n7Lv70zbCFJ",
+      "appleMusic": "https://music.apple.com/us/album/de-donde-soy-single/6819314909?uo=4",
+      "itunes": "https://music.apple.com/us/album/de-donde-soy-single/6819314909?uo=4&app=itunes&at=1001lry3&ct=dashboard",
+      "hyperfollow": "https://distrokid.com/hyperfollow/iangroove/de-donde-soy"
+    }
+  },
+  {
+    "slug": "se-hacen-hueco",
+    "title": "Se hacen hueco",
+    "type": "Single",
+    "releaseDate": "2026-10-04",
+    "cover": "cover-se-hacen-hueco.png",
+    "description": "Bachata pop sobre esos amores que encuentran sitio entre agendas llenas.",
+    "featured": false,
+    "live": false,
+    "links": {
+      "spotify": "https://open.spotify.com/album/19OsuvwrQ2buFGT69oFTmV",
+      "appleMusic": "https://music.apple.com/us/album/se-hacen-hueco-single/6819248008?uo=4",
+      "itunes": "https://music.apple.com/us/album/se-hacen-hueco-single/6819248008?uo=4&app=itunes&at=1001lry3&ct=dashboard",
+      "hyperfollow": "https://distrokid.com/hyperfollow/iangroove/se-hacen-hueco"
+    }
+  },
+  {
+    "slug": "no-me-da-la-vida",
+    "title": "No me da la vida",
+    "type": "Single",
+    "releaseDate": "2026-10-04",
+    "cover": "cover-no-me-da-la-vida.jpg",
+    "description": "Pop con energía sobre dejar de llegar a todo y recuperar el propio tiempo.",
+    "featured": false,
+    "live": false,
+    "links": {
+      "spotify": "https://open.spotify.com/album/7bqaKuYRjEicVHOxEaY1f2",
+      "appleMusic": "https://music.apple.com/us/album/no-me-da-la-vida-single/6819273044?uo=4",
+      "itunes": "https://music.apple.com/us/album/no-me-da-la-vida-single/6819273044?uo=4&app=itunes&at=1001lry3&ct=dashboard",
+      "hyperfollow": "https://distrokid.com/hyperfollow/iangroove/no-me-da-la-vida"
+    }
+  },
+  {
     "slug": "otros-planes",
     "title": "Otros planes",
     "type": "Single",
     "releaseDate": "2026-09-14",
     "cover": "cover-otros-planes.png",
     "description": "Una canción sobre cambiar el guion cuando la vida decide improvisar.",
-    "featured": true,
+    "featured": false,
     "live": false,
     "links": {
       "spotify": "https://open.spotify.com/album/4n7w0vHbAstt2BXEtjPIB7",
