@@ -48,22 +48,6 @@
     }
   },
   {
-    "slug": "otros-planes",
-    "title": "Otros planes",
-    "type": "Single",
-    "releaseDate": "2026-09-14",
-    "cover": "cover-otros-planes.png",
-    "description": "Una canción sobre cambiar el guion cuando la vida decide improvisar.",
-    "featured": false,
-    "live": false,
-    "links": {
-      "spotify": "https://open.spotify.com/album/4n7w0vHbAstt2BXEtjPIB7",
-      "appleMusic": "https://music.apple.com/us/album/otros-planes-single/6812408124?uo=4&app=music&at=1001lry3&ct=dashboard",
-      "itunes": "https://music.apple.com/us/album/otros-planes-single/6812408124?uo=4&app=itunes&at=1001lry3&ct=dashboard",
-      "hyperfollow": "https://distrokid.com/hyperfollow/iangroove/otros-planes?ref=release"
-    }
-  },
-  {
     "slug": "la-mas-bonita",
     "title": "La más bonita",
     "type": "Single",
@@ -105,6 +89,22 @@
       "appleMusic": "https://music.apple.com/us/album/all%C3%A1-voy-single/6811595297?uo=4&app=music&at=1001lry3&ct=dashboard",
       "itunes": "https://music.apple.com/us/album/all%C3%A1-voy-single/6811595297?uo=4&app=itunes&at=1001lry3&ct=dashboard",
       "hyperfollow": "https://distrokid.com/hyperfollow/iangroove/all-voy?ref=release"
+    }
+  },
+  {
+    "slug": "otros-planes",
+    "title": "Otros planes",
+    "type": "Single",
+    "releaseDate": "2026-09-14",
+    "cover": "cover-otros-planes.png",
+    "description": "Una canción sobre cambiar el guion cuando la vida decide improvisar.",
+    "featured": false,
+    "live": false,
+    "links": {
+      "spotify": "https://open.spotify.com/album/4n7w0vHbAstt2BXEtjPIB7",
+      "appleMusic": "https://music.apple.com/us/album/otros-planes-single/6812408124?uo=4&app=music&at=1001lry3&ct=dashboard",
+      "itunes": "https://music.apple.com/us/album/otros-planes-single/6812408124?uo=4&app=itunes&at=1001lry3&ct=dashboard",
+      "hyperfollow": "https://distrokid.com/hyperfollow/iangroove/otros-planes?ref=release"
     }
   },
   {
